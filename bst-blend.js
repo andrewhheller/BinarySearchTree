@@ -33,23 +33,23 @@ BinarySearchTree.prototype.insert = function(value) {
 
 }
 
-BinarySearchTree.prototype.contains = function(nodeValue) {
+BinarySearchTree.prototype.contains = function(searchValue) {
 
   if((this.left) && nodeValue < this.value) {
-    let result = this.left.contains(nodeValue);
+    let result = this.left.contains(searchValue);
     if (result) {
       return true;
     }
   }
 
   else if((this.right) && nodeValue > this.value) {
-    let result = this.right.contains(nodeValue);
+    let result = this.right.contains(searchValue);
     if(result) {
       return true;
     }
   }
 
-  else if(nodeValue === this.value) {
+  else if(searchValue === this.value) {
     return true;
   }
 
