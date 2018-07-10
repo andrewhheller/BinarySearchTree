@@ -7,6 +7,10 @@ function BinarySearchTree(value) {
 
 }
 
+BinarySearchTree.prototype.size = function() {
+  return this.count;
+}
+
 BinarySearchTree.prototype.insert = function(value) {
 
   this.count++;
@@ -35,14 +39,14 @@ BinarySearchTree.prototype.insert = function(value) {
 
 BinarySearchTree.prototype.contains = function(searchValue) {
 
-  if((this.left) && nodeValue < this.value) {
+  if((this.left) && searchValue < this.value) {
     let result = this.left.contains(searchValue);
     if (result) {
       return true;
     }
   }
 
-  else if((this.right) && nodeValue > this.value) {
+  else if((this.right) && searchValue > this.value) {
     let result = this.right.contains(searchValue);
     if(result) {
       return true;
@@ -88,9 +92,6 @@ BinarySearchTree.prototype.traverseByLevel = function(fn) {
   }
 }
 
-BinarySearchTree.prototype.size = function() {
-  return this.count;
-}
 
 // create tree with reoot node
 let tree = new BinarySearchTree(20);
@@ -116,7 +117,7 @@ valuesToInsert.forEach((value) => {
 })
 
 // correctly searches for a value
-// console.log(tree.contains(15));
+// console.log(tree.contains(20));
 // console.log(tree.contains(100));
 
 // correctly reports tree size (# of nodes)
@@ -125,13 +126,13 @@ valuesToInsert.forEach((value) => {
 
 // can output in-order traversal of tree
 
-// testArr = [];
+testArr = [];
 
-// tree.traverseInOrder((val) => {
-//     testArr.push(val)
-//   })
+tree.traverseInOrder((val) => {
+    testArr.push(val)
+  })
 
-// console.log(testArr);
+console.log(testArr);
 // [ 0, 1, 5, 11, 12, 13, 14, 15, 17, 20, 21, 25, 28, 30, 31, 33, 34, 35, 45, 50 ]
 
 // ### can perform a breadth travesal (by level)
@@ -144,3 +145,5 @@ valuesToInsert.forEach((value) => {
 
 // console.log(depth);
 // ([20, 15, 25, 5, 17, 21, 28, 0, 14, 50, 1, 13, 45, 12, 30, 11, 35, 33, 31, 34])
+
+module.exports = BinarySearchTree;

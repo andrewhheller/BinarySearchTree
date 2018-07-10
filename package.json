@@ -1,0 +1,24 @@
+{
+  "name": "bst-blend",
+  "version": "1.0.0",
+  "description": "# Functionality - insert nodes per BST guidelines - searches for nodes - returns tree size - traverses tree in order - traverses tree by level",
+  "main": "bst-blend.js",
+  "scripts": {
+    "test": "nodemon ./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewhheller/BinarySearchTree.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewhheller/BinarySearchTree/issues"
+  },
+  "homepage": "https://github.com/andrewhheller/BinarySearchTree#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
